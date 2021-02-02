@@ -53,6 +53,18 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 //--------------------------------- Collect Data ---------------------------------//
+///////
+var d = new Date();
+var n = d.getDay();
+var h = d.getHours();
+h = h % 12;
+h = h ? h : 12;
+var m = d.getMinutes();
+m = m < 10 ? '0'+m : m;
+var ampm = h >= 12 ? ' PM' : ' AM';
+var months = ["JAN","FEB","MAR","APR","MAY","JUNE","JUL","AUG","SEPT","OCT","NOV","DEC"];
+var stamp = months[d.getMonth()]+" "+n+" AT "+h+":"+m+ampm;
+//////
 var nameV, convo, msglength;
 personID = 14;
 
@@ -67,19 +79,21 @@ document.getElementById('postBtn').onclick = function () {
     Ready();
     firebase.database().ref('student/' + personID).set({
         Message: postData,
-        primaryProfile: personID,
-        secondaryProfile: profileTwo
+        PrimaryProfile: personID,
+        SecondaryProfile: profileTwo,
+        Timestamp: stamp
     });
 }
 
 //--------------------------------- Read ---------------------------------//
+
 var alertSound = document.getElementById("chime");
 
 window.onload = function () {
     Ready();
-    firebase.database().ref('student/' + personID).on('value', function (snapshot) { // personID must be primary Profile
+    firebase.database().ref('student/' + personID).on('value', function (snapshot) { 
         document.getElementById('namebox').value = snapshot.val().secondProfile;
-        document.getElementById('convoBox').innerHTML += "<div class='messengerRight'>" + localStorage.profileName + ": " + snapshot.val().Message + "</div>";
+        document.getElementById('convoBox').innerHTML += "<div class='individualChatBlock'><div class='messengerRight'><div class='timestampDiv'>"+snapshot.val().Timestamp+"</div>" + snapshot.val().Message + "</div></div>";
 
         msglength = snapshot.val().Message
         if (msglength.length > 10) {

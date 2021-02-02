@@ -651,25 +651,6 @@ h3 {
   transition: all .15s linear;
 }
 
-#convoBox {
-  position: absolute;
-  overflow-x: hidden;
-  font-family: 'Roboto', sans-serif;
-  display: flex;
-  justify-content: flex-end;
-  flex-direction: column;
-  left: 0;
-  z-index: 0;
-  bottom: 60px;
-  width: 300px;
-  height: 230px;
-  box-sizing: border-box;
-  padding: 8px;
-  resize: none;
-  outline: none;
-  border: none;
-}
-
 #fader {
   position: fixed;
   top: 0;
@@ -722,11 +703,45 @@ h3 {
   }
 }
 
+#convoBox {
+  position: absolute;
+  overflow-x: hidden;
+  font-family: 'Roboto', sans-serif;
+  pointer-events: none;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  z-index: 0;
+  bottom: 60px;
+  width: 300px;
+  height: 230px;
+  box-sizing: border-box;
+  padding: 8px;
+}
+
+.individualChatBlock {
+  clear: both;
+  min-width: 100px;
+  position: relative;
+  margin: 14px 0 12px 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.timestampDiv {
+  position: absolute;
+  right: 4px;
+  top: -22px;
+  font-size: 11px;
+  font-weight: 400;
+  white-space: nowrap;
+  color: #CCC;
+}
+
 .messengerRight {
   position: relative;
   right: 0px;
-  display: inline-block;
-  margin-bottom: 12px;
+  max-width: 240px;
   border-radius: 12px;
   padding: 6px 10px;
   font-size: 14px;
@@ -735,6 +750,7 @@ h3 {
   font-weight: 300;
   background-color: #7088D7;
   color: #ffffff;
+  hyphens: auto;
 }
 
 #infoBox {
