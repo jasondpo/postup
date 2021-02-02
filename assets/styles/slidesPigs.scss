@@ -1,0 +1,118 @@
+/* 
+Z_INDEX LEVELS 
+lines_overlay  3
+slideShowNavContainer 4
+messageContainer 5
+slideshow 1
+logo 5
+menuBtn 6
+ */
+
+ @import 'colors';
+
+#lines_overlay {
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(../images/lines.png);
+}
+
+#slideshow {
+    position: absolute;
+    z-index: 1;
+    opacity: .6;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+}
+
+#slideshowFreezeFrame {
+    position: absolute;
+    background-size: cover;
+    background-position: center center;
+    z-index: 2;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+}
+
+#slideshow>.imgHolder {
+    position: absolute;
+    background-size: cover;
+    background-position: center center;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+}
+
+
+.pic1 {
+    background-image: url(../images/slides/pigs/pigs_1.jpg);
+}
+
+.pic2 {
+    background-image: url(../images/slides/pigs/pigs_2.jpg);
+}
+
+.pic3 {
+    background-image: url(../images/slides/pigs/pigs_3.jpg);
+}
+
+.pic4 {
+    background-image: url(../images/slides/pigs/pigs_4.jpg);
+}
+
+.pic5 {
+    background-image: url(../images/slides/pigs/pigs_5.jpg);
+}
+
+.pic6 {
+    background-image: url(../images/slides/pigs/pigs_6.jpg);
+}
+
+.pic7 {
+    background-image: url(../images/slides/pigs/pigs_7.jpg);
+}
+
+.pic8 {
+    background-image: url(../images/slides/pigs/pigs_8.jpg);
+}
+
+#slideShowNavContainer{
+    position: absolute;
+    z-index: 4;
+    display: flex;
+    flex-wrap: nowrap;
+    bottom: 20px;
+    left: 20px;
+    width: 250px;
+    height: 14px;
+}
+#slideShowNavContainer > i{
+    color: #777;
+    font-size: 12px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+#slideShowNavContainer > i:hover{
+    color: white;  
+}
+.activeDot{
+    color: white !important;   
+}
+
+#slideShowNavContainer span{
+    display: none;
+    color: white !important;
+    font-size: 14px !important;
+    margin: -4px 0px 0px 6px;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: .03em;
+    cursor: pointer;    
+}
