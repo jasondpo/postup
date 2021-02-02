@@ -49,7 +49,7 @@
 
     <div id="rectangleUnderLogin"></div>
 
-    <div id="about">&#169; 2004-2021 Jason D Portfolio</span></div>
+    <div id="about">&#169; 2006-2021 Jason D Portfolio</span></div>
 
     <div id="wisdomBox" onclick="randomQuote()"><strong><span id="greet"></span> </strong> <span id="quote"></span> </div>
     <div id="logoBkGContainer2"></div>
