@@ -65,20 +65,30 @@
         <div id="headerAlt" class="altClass">Reposition chat</div>
 
 
-        <p><input id="namebox" type="text" placeholder="Name"
-                onfocus="if(this.placeholder=='Name')[this.placeholder='']"
-                onblur="if(this.placeholder=='')[this.placeholder='Name']" style="display:none"></p>
+       <input id="namebox" type="text" placeholder="Name"
+            onfocus="if(this.placeholder=='Name')[this.placeholder='']"
+            onblur="if(this.placeholder=='')[this.placeholder='Name']" style="display:none">
 
-        <p><div id="convoBox"></div></p>
+        <div id="convoBoxWrapper">
+            <div id="convoBox"></div>
+        </div>            
 
-        <p><textarea id="postBox" type="text" placeholder="What's on your mind?" onfocus="if(this.placeholder=='What\'s on your mind?')[this.placeholder='']" onblur="if(this.placeholder=='')[this.placeholder='What\'s on your mind?']"></textarea></p>
-
+        <textarea id="postBox" type="text" placeholder="What's on your mind?" onfocus="if(this.placeholder=='What\'s on your mind?')[this.placeholder='']" onblur="if(this.placeholder=='')[this.placeholder='What\'s on your mind?']"></textarea>
+       
         <br>
 
         <button id="postBtn">Post</button>
         <br><br>
         <button id="update" style="display:none">UPDATE</button>
         <button id="delete" style="display:none">DELETE</button>
+
+        <div id="emojiBar">
+            😃
+            😉
+            🍆
+            😡
+            ❤️
+        </div>
     </div>
 
 <!-- Message Container ENDS -->
