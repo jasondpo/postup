@@ -137,3 +137,11 @@ $("body").keydown(function (event) {
         $("#postBtn").click();
     }
 })
+
+//// Add emoji
+$(".emoji").click(function () {
+    var chosenEmoji = $(this).html();
+    var postVal = $("#postBox").val();
+    var addEmoji = postVal + chosenEmoji;
+    $("#postBox").val(addEmoji);
+})

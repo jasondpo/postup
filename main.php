@@ -83,11 +83,13 @@
         <button id="delete" style="display:none">DELETE</button>
 
         <div id="emojiBar">
-            😃
-            😉
-            🍆
-            😡
-            ❤️
+        <ul id="emojiList">
+            <li class="emoji">😃</li>
+            <li class="emoji">😉</li>
+            <li class="emoji">🍆</li>
+            <li class="emoji">😡</li>
+            <li class="emoji">❤️</li>
+        </ul>
         </div>
     </div>
 
