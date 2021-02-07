@@ -93,6 +93,7 @@ window.onload = function () {
     Ready();
     firebase.database().ref('student/' + personID).on('value', function (snapshot) {
         document.getElementById('namebox').value = snapshot.val().secondProfile;
+
         document.getElementById('convoBox').innerHTML += "<div class='individualChatBlock'><div class='messengerRight'><div class='timestampDiv'>" + snapshot.val().Timestamp + "</div>" + snapshot.val().Message + "</div></div>";
 
         msglength = snapshot.val().Message
@@ -123,25 +124,9 @@ document.getElementById('delete').onclick = function () {
     firebase.database().ref('student/' + personID).remove();
 }
 
-/// Auto scroll to bottom of message div
-var objDiv = document.getElementById("convoBox");
-function scrollDown() {
-    objDiv.scrollTop = objDiv.scrollHeight;
-}
 
-/// Trigger postBtn when keycode 13 is pressed
-$("body").keydown(function (event) {
-    var x = event.which || event.keyCode;
-    if (x == 13) {
-        event.preventDefault();
-        $("#postBtn").click();
-    }
-})
 
-//// Add emoji
-$(".emoji").click(function () {
-    var chosenEmoji = $(this).html();
-    var postVal = $("#postBox").val();
-    var addEmoji = postVal + chosenEmoji;
-    $("#postBox").val(addEmoji);
-})
+
+
+
+

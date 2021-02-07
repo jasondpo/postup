@@ -78,18 +78,46 @@
         <br>
 
         <button id="postBtn">Post</button>
+        <button id="emojiBtn"></button>
         <br><br>
         <button id="update" style="display:none">UPDATE</button>
         <button id="delete" style="display:none">DELETE</button>
 
         <div id="emojiBar">
-        <ul id="emojiList">
-            <li class="emoji">😃</li>
-            <li class="emoji">😉</li>
-            <li class="emoji">🍆</li>
-            <li class="emoji">😡</li>
-            <li class="emoji">❤️</li>
-        </ul>
+            <ul id="emojiList">
+                <li class="emoji">😃</li>
+                <li class="emoji">😉</li>                
+                <li class="emoji">😜</li>
+                <li class="emoji">🤔</li>
+                <li class="emoji">🤮</li>
+                <li class="emoji">😮</li>
+                <li class="emoji">😡</li>
+                <li class="emoji">😒</li>
+                <li class="emoji">❤️</li>
+                <li class="emoji">🔥</li>
+                <li class="emoji">👍</li>
+                <li class="emoji">✌️</li>
+                <li class="emoji">👎</li>
+                <li class="emoji">✋</li>
+                <li class="emoji">👊</li>
+                <li class="emoji">✊</li>
+                <li class="emoji">🍑</li>
+                <li class="emoji">🥜</li>
+                <li class="emoji">🍆</li>
+                <li class="emoji">🙈</li>
+                <li class="emoji">🙉</li>
+                <li class="emoji">🙊</li>
+                <li class="emoji">🐖</li>
+                <li class="emoji">🐴</li>
+                <li class="emoji">💡</li>
+                <li class="emoji">🛌</li>
+                <li class="emoji">📺</li>
+                <li class="emoji">🧨</li>
+                <li class="emoji">🎉</li>
+                <li class="emoji">💯</li>
+                <li class="emoji">❓</li>
+                <li class="emoji">❌</li>
+            </ul>
         </div>
     </div>
 
@@ -125,6 +153,7 @@
 
     <script src="assets/js/slideshow.js"></script>
     <script src="assets/js/draggable.js"></script>
+    <script src="assets/js/chatBox.js"></script>
     <script src='assets/js/page_transition.js'></script>
     <script src='assets/js/main.js'> </script>
 

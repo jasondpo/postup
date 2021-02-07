@@ -196,7 +196,7 @@ h3{
     font-family: 'Roboto', sans-serif;
     color: $text;
     text-align: right;
-    font-size: 13px;
+    font-size: 14px;
     display: block;
     bottom: 20px;
     left: 20px;
@@ -311,7 +311,7 @@ h3{
 }
 #profileBtn {
     position: absolute;
-    z-index: 6;
+    z-index: 5;
     top: 13px;
     right: 14px;
     width: 72px;
@@ -442,13 +442,13 @@ h3{
 }
 // Message Container STARTS
 .messageContainer {
-    width: 300px;
+    width: 315px;
     height: 405px;
     box-sizing: border-box;
     border-radius: 10px;
     background-color:rgba(255,255,255,1);
     position: absolute;
-    padding-top: 80px;
+    padding-top: 76px;
     z-index: 5;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
     -webkit-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
@@ -456,6 +456,7 @@ h3{
 
     #greyHeader{
         position: absolute;
+        z-index: 3;
         top:0;
         right: 0;
         left:0;
@@ -470,7 +471,7 @@ h3{
 
     #senderProfilePic{
         position: absolute;
-        z-index: 1;
+        z-index: 3;
         left:18px;
         top:26px;
         background-color: $bkg-light;
@@ -489,7 +490,7 @@ h3{
         font-family: 'Roboto', sans-serif;
         font-weight: 500;
         font-size: 17px;
-        z-index: 2;
+        z-index: 3;
         height: 17px;
         color: $textDark;
         display: block;
@@ -499,6 +500,7 @@ h3{
     }
     #senderProfileTheme{
         position: absolute;
+        z-index: 3;
         right: 66px;
         top:36px;
         width: 33px;
@@ -512,6 +514,7 @@ h3{
     #messageContainerClose{
         position: absolute;
         right: 18px;
+        z-index: 3;
         top:34px;
         width: 30px;
         height: 30px;
@@ -544,7 +547,7 @@ h3{
         font-size: 13px;
         letter-spacing: .02em;
         color: $bkg-light;
-        z-index: 2;
+        z-index: 3;
         height: 32px;
         box-sizing: border-box;
         border-radius: 8px;
@@ -565,10 +568,10 @@ h3{
 #mydivheader {
     position: absolute;
     top:4px;
-    z-index: 2;
+    z-index: 3;
     height: 6px;
     left:24px;
-    width: 250px;
+    width: 265px;
     margin: 6px auto 0px;
     cursor: move;
     background-color:$bkg-grey;
@@ -576,15 +579,16 @@ h3{
     transition: all .15s linear;
 }
 #mydivheader:hover {
-    background-color: $bkg-grey-hover
+    background-color: $bkg-grey-hover;
 }
 #postBtn{
+    display: none;
     position: absolute;
     border-radius: 100%;
     letter-spacing: .03em;
     border:0px solid $bkg-light;
     background-color: $bkg-grey;
-    bottom:42px;
+    bottom:12px;
     right:12px;
     width: 42px;
     height: 42px;
@@ -604,57 +608,75 @@ h3{
     color: $bkg-light !important;
 }
 
+#emojiBtn{
+    position: absolute;
+    border-radius: 100%;
+    border:0px solid $bkg-light;
+    bottom:15px;
+    right:15px;
+    width: 39px;
+    height: 39px;
+    background-image: url(../images/emojiBtn.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+#emojiBtn:hover{
+    background-color: $bkg-grey-hover-light;  
+}
+
 #postBox {
     position: absolute;
     color:$textDark;
     font-family:Arial, Helvetica, sans-serif;
     letter-spacing: .06em;
     font-size: 14px;
-    bottom: 44px;
-    left:14px;
-    width: 226px;
+    bottom: 14px;
+    left:15px;
+    min-width: 285px;
+    max-width: 270px;
     height: 40px;
     box-sizing: border-box;
-    padding: 8px 22px 6px 14px;
+    padding: 8px 42px 6px 8px;
     line-height: 1.3em;
     background-color: $bkg-grey;
-    border-radius: 30px;
+    border-radius: 18px;
     resize: none;
     outline: none;
+    overflow:hidden;
     border:4px solid $bkg-grey;
-    transition: all .15s linear;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+
 }
 
 #emojiBar{
     position: absolute;
-    opacity: .3;
-    bottom: 12px;
-    padding-top: 4px;
-    left: 20px;
-    height: 20px;
-    width: 260px;
-    border-top: 1px solid $bkg-grey;
-    transition: opacity .15s linear;
+    display: none;
+    border-radius: 12px;
+    bottom: 60px;
+    padding: 8px 4px 10px 4px;
+    left: 15px;
+    width: 280px;
+    background-color: $bkg-light;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
-#emojiBar:hover{
-    opacity: 1;   
-}
+
 #emojiList {
     display: flex;
-    justify-content: flex-end;
+    flex-wrap: wrap;
     padding: 0;
     margin: 0;
 }
 #emojiList li{
     list-style: none;
-    margin-left: 10px;
+    margin-left: 13px;
     cursor: pointer;
 }
+#emojiList li:hover{
+    background-color: $bkg-grey;
+}
 // Message Container ENDS
-
-// #postBox:hover {
-//     background-color: rgb(177, 90, 119);
-// }
 
 
 
@@ -709,8 +731,8 @@ h3{
     position: absolute;
     z-index: 0;
     bottom: 0px;
-    width: 298px;
-    height: 231px;
+    width: 313px;
+    height: 270px;
     position: relative;
     display: flex;
     overflow-y: auto;
@@ -722,9 +744,9 @@ h3{
     display: flex;
     justify-content: flex-end;
     flex-direction: column;
-    width: 297px;
+    width: 312px;
     box-sizing: border-box;
-    padding: 8px 18px 0px 18px;
+    padding: 8px 30px 0px 18px;
     flex: 0 0 auto
 }
 .individualChatBlock{
