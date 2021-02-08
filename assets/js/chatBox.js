@@ -48,3 +48,52 @@ function scrollDown() {
     objDiv.scrollTop = objDiv.scrollHeight;
 }
 
+//// .06 Icons
+
+$('#postBox').keyup(function (event) {
+    if ($('#postBox').val() != "" && $("#postBox").is(":focus")) {
+        $("#postBtn").addClass('postBtnActive');
+    }
+});
+
+$('#postBox').click(function () {
+    if ($('#postBox').val() != "") {
+        $("#postBtn").addClass('postBtnActive');
+    }
+});
+
+$(window).click(function () {
+    $("#postBtn").removeClass('postBtnActive');
+});
+
+$('#senderProfileTheme').click(function () {
+    $("#senderProfileTheme").toggleClass("profileThemeActive");
+});
+
+$('#senderProfileTheme').mouseover(function () {
+    $("#playThemeAlt").addClass("altClassActive");
+});
+$('#senderProfileTheme').mouseleave(function () {
+    $("#playThemeAlt").removeClass("altClassActive");
+});
+
+$('#messageContainerClose').mouseover(function () {
+    $("#closeChatAlt").addClass("altClassActive");
+});
+$('#messageContainerClose').mouseleave(function () {
+    $("#closeChatAlt").removeClass("altClassActive");
+});
+
+$('#mydivheader').mouseover(function () {
+    $("#headerAlt").addClass("altClassActive");
+});
+$('#mydivheader').mouseleave(function () {
+    $("#headerAlt").removeClass("altClassActive");
+});
+
+$('#location').mouseover(function () {
+    $("#locationAlt").addClass("altClassActive");
+});
+$('#location').mouseleave(function () {
+    $("#locationAlt").removeClass("altClassActive");
+});

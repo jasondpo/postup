@@ -59,10 +59,12 @@
         <div id="messageBox"></div>
         <div id="senderProfileName">J-Boi</div>
         <div id="senderProfileTheme"></div>
+        <div id="location"></div>
         <div id="messageContainerClose"></div>
         <div id="closeChatAlt" class="altClass">Close chat</div>
         <div id="playThemeAlt" class="altClass">View albums</div>
         <div id="headerAlt" class="altClass">Reposition chat</div>
+        <div id="locationAlt" class="altClass">Locate</div>
 
 
        <input id="namebox" type="text" placeholder="Name"
@@ -148,7 +150,7 @@
         <span>Restart</span>
     </div>
     
-    <div class="startChatBottomBtn infoHere"></div>
+    <div class="startChatBottomBtn infoHere">J</div>
     <div class="startChatBottomActivityBtn"></div>
 
     <script src="assets/js/slideshow.js"></script>

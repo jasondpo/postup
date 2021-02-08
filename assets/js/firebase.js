@@ -1,46 +1,3 @@
-
-$('#postBox').keyup(function (event) {
-    if ($('#postBox').val() != "" && $("#postBox").is(":focus")) {
-        $("#postBtn").addClass('postBtnActive');
-    }
-});
-
-$('#postBox').click(function () {
-    if ($('#postBox').val() != "") {
-        $("#postBtn").addClass('postBtnActive');
-    }
-});
-
-$(window).click(function () {
-    $("#postBtn").removeClass('postBtnActive');
-});
-
-$('#senderProfileTheme').click(function () {
-    $("#senderProfileTheme").toggleClass("profileThemeActive");
-});
-
-$('#senderProfileTheme').mouseover(function () {
-    $("#playThemeAlt").addClass("altClassActive");
-});
-$('#senderProfileTheme').mouseleave(function () {
-    $("#playThemeAlt").removeClass("altClassActive");
-});
-
-$('#messageContainerClose').mouseover(function () {
-    $("#closeChatAlt").addClass("altClassActive");
-});
-$('#messageContainerClose').mouseleave(function () {
-    $("#closeChatAlt").removeClass("altClassActive");
-});
-
-$('#mydivheader').mouseover(function () {
-    $("#headerAlt").addClass("altClassActive");
-});
-$('#mydivheader').mouseleave(function () {
-    $("#headerAlt").removeClass("altClassActive");
-});
-
-
 //--------------------------------- Configuration ---------------------------------//
 var firebaseConfig = {
     apiKey: "AIzaSyDyF2tISFgVAHOL_efMz-4Cnm_yHXYXLh8",
@@ -55,7 +12,7 @@ firebase.initializeApp(firebaseConfig);
 //--------------------------------- Collect Data ---------------------------------//
 ///////
 var d = new Date();
-var n = d.getDay();
+var n = d.getDate();
 var h = d.getHours();
 var ampm = h >= 12 ? ' PM' : ' AM';
 h = h % 12;
@@ -69,7 +26,8 @@ var nameV, convo, msglength;
 personID = 14;
 
 function Ready() {
-    profileTwo = document.getElementById('namebox').value;
+    // profileTwo = document.getElementById('namebox').value;
+    sender = localStorage.profileName;
     postData = document.getElementById('postBox').value;
     document.getElementById('postBox').value = "";
 };
@@ -80,12 +38,12 @@ document.getElementById('postBtn').onclick = function () {
     firebase.database().ref('student/' + personID).set({
         Message: postData,
         PrimaryProfile: personID,
-        SecondaryProfile: profileTwo,
+        LastSenderName: sender,
         Timestamp: stamp
     });
 }
 
-//--------------------------------- Read ---------------------------------//
+//--------------------------------- Read & Display ---------------------------------//
 
 var alertSound = document.getElementById("chime");
 
@@ -94,7 +52,11 @@ window.onload = function () {
     firebase.database().ref('student/' + personID).on('value', function (snapshot) {
         document.getElementById('namebox').value = snapshot.val().secondProfile;
 
-        document.getElementById('convoBox').innerHTML += "<div class='individualChatBlock'><div class='messengerRight'><div class='timestampDiv'>" + snapshot.val().Timestamp + "</div>" + snapshot.val().Message + "</div></div>";
+        if (snapshot.val().LastSenderName == localStorage.profileName) {
+            document.getElementById('convoBox').innerHTML += "<div class='individualChatBlockEnd'><div class='messengerRight'><div class='timestampDiv'>" + snapshot.val().Timestamp + "</div>" + snapshot.val().Message + "</div></div>";
+        } else {
+            document.getElementById('convoBox').innerHTML += "<div class='individualChatBlockStart'><div class='messengerLeft'><div class='timestampDivLeft'>" + snapshot.val().Timestamp + "</div>" + snapshot.val().Message + "</div></div>";
+        }
 
         msglength = snapshot.val().Message
         if (msglength.length > 10) {

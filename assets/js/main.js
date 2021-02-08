@@ -15,17 +15,22 @@ $("#profileBtn").mouseout(function () {
 });
 
 // Floating infobox
+var timer
 $(document).on('mouseover', '.infoHere', function () {
     $('.nameHolder').html("");
     var x = $(this).offset();
     var above = x.top;
     var fromLeft = x.left;
     var divWords = $(this).find(':first-child').html();
-    $('#infoBox').fadeIn(200).css({ 'right': 110, 'top': above - 7 });
-    $('.nameHolder').html(divWords);
+    timer = setTimeout(function () {
+        $('#infoBox').fadeIn(200).css({ 'right': 110, 'top': above - 7 });
+        $('.nameHolder').html(divWords);
+    }, 500)
 });
+
 $(document).on('mouseout', '.infoHere', function () {
     $('#infoBox').hide();
+    clearTimeout(timer);
 });
 
 // Options
