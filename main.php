@@ -48,7 +48,10 @@
 
     <a href="index.php"><div id="logo"></div></a>
 
-    <div id="profileBtn" class="infoHere"></div>
+    <div id="profileBtn" class="infoHere">
+        <div></div>
+        <div id="logOutBtn"><i class="fas fa-times"></i></div>
+    </div>
 
  <!-- Message Container STARTS -->
 

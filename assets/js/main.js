@@ -1,4 +1,4 @@
-$("#profileBtn").click(function () {
+$("#logOutBtn").click(function () {
     localStorage.clear();
     window.location = 'index.php'
 })
@@ -6,13 +6,6 @@ $("#profileBtn").click(function () {
 // Profile pic
 $("#profileBtn").css("background-image", "url(assets/images/profiles/" + localStorage.profileName + ".png)");
 
-$("#profileBtn").mouseover(function () {
-    $(this).css("background-image", "url(assets/images/profiles/logOut_icon.png)")
-});
-
-$("#profileBtn").mouseout(function () {
-    $(this).css("background-image", "url(assets/images/profiles/" + localStorage.profileName + ".png)")
-});
 
 // Floating infobox
 var timer
