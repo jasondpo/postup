@@ -91,9 +91,13 @@ $('#mydivheader').mouseleave(function () {
     $("#headerAlt").removeClass("altClassActive");
 });
 
-$('#location').mouseover(function () {
-    $("#locationAlt").addClass("altClassActive");
+$('#video').mouseover(function () {
+    $("#videoAlt").addClass("altClassActive");
 });
-$('#location').mouseleave(function () {
-    $("#locationAlt").removeClass("altClassActive");
+$('#video').mouseleave(function () {
+    $("#videoAlt").removeClass("altClassActive");
+});
+$('#video').click(function () {
+    $("#videoConference").toggle();
+    $("#videoFrame").attr('src', "https://demo.tico.chat/powercall?room=postupvideo4852&entry=wondercall");
 });

@@ -530,20 +530,20 @@ h3{
     #messageContainerClose:hover{
         background-color: $bkg-grey;
     }
-    #location{
+    #video{
         position: absolute;
         z-index: 3;
         right: 116px;
-        top:36px;
-        width: 18px;
-        height: 24px;
+        top:39px;
+        width: 32px;
+        height: 20px;
         background-position: center center;
         background-repeat: no-repeat;
-        background-image: url(../images/location_icon.png);
+        background-image: url(../images/video_icon.png);
         cursor: pointer;
     }
-    #locationAlt{
-        right:92px;
+    #videoAlt{
+        right:66px;
     }
     #closeChatAlt{
         right:-8px;
@@ -695,6 +695,14 @@ h3{
 }
 #emojiList li:hover{
     background-color: $bkg-grey;
+}
+
+#videoConference{
+    position: absolute;
+    top:75px;
+    width: 315px;
+    height: 328px;
+    display: none;
 }
 // Message Container ENDS
 

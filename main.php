@@ -8,7 +8,7 @@
 
 <body>
 
-    <svg id="fader"></svg> 
+    <svg id="fader"></svg>
 
     <div id="overlayOptions">
         <div id="triangle-right"></div>
@@ -59,12 +59,12 @@
         <div id="messageBox"></div>
         <div id="senderProfileName"></div>
         <div id="senderProfileTheme"></div>
-        <div id="location"></div>
+        <div id="video"></div>
         <div id="messageContainerClose"></div>
         <div id="closeChatAlt" class="altClass">Close chat</div>
         <div id="playThemeAlt" class="altClass">View albums</div>
         <div id="headerAlt" class="altClass">Reposition chat</div>
-        <div id="locationAlt" class="altClass">Locate</div>
+        <div id="videoAlt" class="altClass">Video Conference</div>
 
 
        <input id="namebox" type="text" placeholder="Name"
@@ -120,6 +120,9 @@
                 <li class="emoji">❓</li>
                 <li class="emoji">❌</li>
             </ul>
+        </div>
+        <div id="videoConference">
+            <div style='position:relative;bottom:0px;right:0px;z-index:999;background:transparent'>    <iframe id='videoFrame' src=''            style='display:block;border:1px solid #eee;border-radius:8px;box-shadow:2px 2px rgba(0,0,0,0.2);'            width=313 height=476 frameBorder='0'            allow='autoplay;encrypted-media;camera;microphone'            allowFullScreen></iframe>    <div id='frameBoxHandler'         style='display:flex;box-shadow: 2px 2px rgba(0,0,0,0.2);margin-top:10px;margin-left:auto;width:40px;height:40px;border-radius:8px;background:#fff;color:#ed2a67;align-items:center;justify-content:center;'>        X    </div></div><script>var bObj = document.getElementById('frameBoxHandler');bObj.onclick = function() {    if (document.getElementById('videoFrame').style.display === 'block') {        document.getElementById('videoFrame').style.display = 'none';        document.getElementById('frameBoxHandler').innerHTML = 'Call';        document.getElementById('frameBoxHandler').style.background = '#ed2a67';        document.getElementById('frameBoxHandler').style.color = '#fff';    } else {        document.getElementById('videoFrame').style.display = 'block';        document.getElementById('frameBoxHandler').innerHTML = 'X';        document.getElementById('frameBoxHandler').style.background = '#fff';        document.getElementById('frameBoxHandler').style.color = '#ed2a67';    }}; // Feel free to add any script as your needs to make your call more powerful, like sending a notifying email when the call is initiated every time.</script>
         </div>
     </div>
 
