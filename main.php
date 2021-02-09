@@ -57,7 +57,7 @@
         <div id="senderProfilePic"></div>
         <div id="mydivheader"></div>
         <div id="messageBox"></div>
-        <div id="senderProfileName">J-Boi</div>
+        <div id="senderProfileName"></div>
         <div id="senderProfileTheme"></div>
         <div id="location"></div>
         <div id="messageContainerClose"></div>
@@ -150,7 +150,7 @@
         <span>Restart</span>
     </div>
     
-    <div class="startChatBottomBtn infoHere">J</div>
+    <div class="startChatBottomBtn infoHere"></div>
     <div class="startChatBottomActivityBtn"></div>
 
     <script src="assets/js/slideshow.js"></script>

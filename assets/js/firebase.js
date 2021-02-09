@@ -41,6 +41,7 @@ document.getElementById('postBtn').onclick = function () {
         LastSenderName: sender,
         Timestamp: stamp
     });
+    notifyAvailability();
 }
 
 //--------------------------------- Read & Display ---------------------------------//
@@ -49,6 +50,7 @@ var alertSound = document.getElementById("chime");
 
 window.onload = function () {
     Ready();
+    checkAvailability();
     firebase.database().ref('student/' + personID).on('value', function (snapshot) {
         document.getElementById('namebox').value = snapshot.val().secondProfile;
 
@@ -88,7 +90,44 @@ document.getElementById('delete').onclick = function () {
 
 
 
+//--------------------------------- Check Availability ---------------------------------//
+function getTime() {
+    var exactTime = new Date();
+    var milliTime = exactTime.getTime()
+    return milliTime
+}
+
+function checkAvailability() {
+    firebase.database().ref('availability/' + personID).on('value', function (snapshot) {
+        if (snapshot.val().LastSenderName != localStorage.profileName && getTime() - snapshot.val().Timestamp <= 60000) {
+            $(".startChatBottomActivityBtn").css("background-color", "#00e400");
+            $(".startChatBottomBtn, #senderProfilePic").css("background-image", "url(assets/images/profiles/" + snapshot.val().LastSenderName + ".png)");
+            $("#senderProfileName").html(snapshot.val().LastSenderName)
+        } else if (snapshot.val().LastSenderName != localStorage.profileName && getTime() - snapshot.val().Timestamp >= 60000) {
+            $(".startChatBottomActivityBtn").css("background-color", "#CCCCCC");
+        } else if (snapshot.val().LastSenderName == localStorage.profileName) {
+            // alert("Other user is me")
+        }
+    });
+    setTimeout(function () { checkAvailability() }, 60000)
+}
+
+function notifyAvailability() {
+    firebase.database().ref('availability/' + personID).set({
+        LastSenderName: sender,
+        PrimaryProfile: personID,
+        Timestamp: getTime()
+    });
+}
 
 
-
-
+// if(new_message){
+//     if(!document.hasFocus()){
+//         audio.play();
+//         document.title="Have new messages";
+//     }
+//     else{
+//         audio.stop();
+//         document.title="Application Name";
+//     } 
+// }
