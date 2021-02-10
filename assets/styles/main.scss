@@ -22,6 +22,7 @@ body {
 }
 a{
     text-decoration: none;
+    color: $text;
 }
 *:focus {
     outline:0;
@@ -934,4 +935,19 @@ h3{
 }
 .infoHere span{
     display: none;
+}
+
+//// About page
+
+#aboutPage{
+    height: 100vh;
+    background-color: $bkg-grey;
+}
+#aboutPage p{
+    line-height: 1.9em;
+    color: $text;
+}
+#aboutWrapper{
+    width: 900px;
+    margin: 90px auto 0;
 }

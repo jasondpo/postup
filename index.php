@@ -49,7 +49,7 @@
 
     <div id="rectangleUnderLogin"></div>
 
-    <div id="about">&#169; 2021 Jason D Portfolio&nbsp;&nbsp;•&nbsp;&nbsp;About</div>
+    <div id="about">&#169; 2021 Jason D Portfolio&nbsp;&nbsp;•&nbsp;&nbsp;<a href="about.php">About</a></div>
 
     <div id="wisdomBox" onclick="randomQuote()"><strong><span id="greet"></span> </strong> <span id="quote"></span> </div>
     <div id="logoBkGContainer2"></div>
