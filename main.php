@@ -156,7 +156,17 @@
         <span>Restart</span>
     </div>
     
-    <div class="startChatBottomBtn infoHere"></div>
+    <div class="startChatBottomBtn infoHere">
+        <span>
+            <div id="startChatWrapper">
+                <div id="startChatProfile"></div>
+                <div class="startChatPicBox"></div>
+                <div class="startChatPicBox"></div>
+                <div class="startChatPicBox"></div>
+            </div>
+        </span>
+    </div>
+
     <div class="startChatBottomActivityBtn"></div>
 
     <script src="assets/js/slideshow.js"></script>

@@ -7,7 +7,7 @@ $("#logOutBtn").click(function () {
 $("#profileBtn").css("background-image", "url(assets/images/profiles/" + localStorage.profileName + ".png)");
 
 
-// Floating infobox
+// Floating infobox "infoHere"
 var timer
 $(document).on('mouseover', '.infoHere', function () {
     $('.nameHolder').html("");

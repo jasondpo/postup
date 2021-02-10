@@ -101,7 +101,7 @@ function checkAvailability() {
     firebase.database().ref('availability/' + personID).on('value', function (snapshot) {
         if (snapshot.val().LastSenderName != localStorage.profileName && getTime() - snapshot.val().Timestamp <= 60000) {
             $(".startChatBottomActivityBtn").css("background-color", "#00e400");
-            $(".startChatBottomBtn, #senderProfilePic").css("background-image", "url(assets/images/profiles/" + snapshot.val().LastSenderName + ".png)");
+            $(".startChatBottomBtn, #senderProfilePic, #startChatProfile").css("background-image", "url(assets/images/profiles/" + snapshot.val().LastSenderName + ".png)");
             $("#senderProfileName").html(snapshot.val().LastSenderName)
         } else if (snapshot.val().LastSenderName != localStorage.profileName && getTime() - snapshot.val().Timestamp >= 60000) {
             $(".startChatBottomActivityBtn").css("background-color", "#CCCCCC");

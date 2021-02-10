@@ -374,10 +374,11 @@ h3{
         width: 100%;
         height: 14px;
         color: $textDark;
+        text-transform: uppercase;
         font-weight: 500;
         text-align: center;
-        font-size: 13px;
-        letter-spacing: .02em;
+        font-size: 12px;
+        letter-spacing: .03em;
     }
     #sectionHeaderAlbums{
         top:111px
@@ -459,6 +460,32 @@ h3{
     right:27px;
     width: 10px;
     height: 10px;
+}
+#startChatWrapper{
+    width: 320px;
+    height: 160px;
+
+    #startChatProfile{
+        width: 50px;
+        height: 50px;
+        margin-top: 10px;
+        background-size: contain;
+        border-radius: 100%;
+        background-color: $bkg-grey;
+        box-shadow: 2px 2px 3px inset rgba(0, 0, 0, 0.2);
+    }
+    .startChatPicBox{
+        width: 100px;
+        height: 80px;
+        border-radius: 6px;
+        background-color: $bkg-grey;
+        float: left;
+        margin: 18px 10px 0 0;
+    }
+    .startChatPicBox:last-child{
+        margin-right: 0px;
+    }
+
 }
 // Message Container STARTS
 .messageContainer {
@@ -687,6 +714,7 @@ h3{
 }
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: #C3C3C3;
+    font-size: 13px;
   }
 
 #emojiBar{
@@ -866,7 +894,7 @@ h3{
 
 #infoBox{/* Black box that appears over mugs */
     position: absolute;
-    max-width: 300px;
+    max-width: 360px;
     padding: 10px 20px;
     display: flex;
     justify-content: center;
