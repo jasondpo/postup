@@ -160,9 +160,25 @@
         <span>
             <div id="startChatWrapper">
                 <div id="startChatProfile"></div>
-                <div class="startChatPicBox"></div>
-                <div class="startChatPicBox"></div>
-                <div class="startChatPicBox"></div>
+                <div class="startChatThemeWrapper">
+                    <div class="startChatPicBoxContainer">
+                        <div class="startChatPicBox african"></div>
+                            <ul>
+                            <li class="albumName">Name of album goes here goes here</li>
+                            <li class="albumSubject">Polster</li>
+                            <li class="albumStats">12 likes • 21 views</li>
+                            </ul>
+                    </div>
+                    <div class="startChatPicBoxContainer">
+                        <div class="startChatPicBox pigs"></div>
+                        <ul>
+                            <li class="albumName">Name of album goes here goes here</li>
+                            <li class="albumSubject">Farmer</li>
+                            <li class="albumStats">12 likes • 21 views</li>
+                        </ul>
+                    </div>
+                    <div id="seeMoreGallery">•••&nbsp;&nbsp;See <span></span>'s Gallery</div> 
+                </div>
             </div>
         </span>
     </div>

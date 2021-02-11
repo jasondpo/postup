@@ -18,7 +18,7 @@ body {
     background-color: $bkg-dark;
     overflow: hidden;
     font-family: 'Roboto', sans-serif;
-    letter-spacing: .03em;
+    letter-spacing: .02em;
 }
 a{
     text-decoration: none;
@@ -277,25 +277,27 @@ h3{
 // Main page STARTS
 #overlayOptions{
     position: absolute;
-    z-index: 99;
+    display: none;
+    z-index: 9;
     background-color: $bkg-dark-transparent;
     left:0;
     top:0;
     bottom:0;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(4px);
     right: 100%;
-    transition: right .25s ease-out;
+    right: 100px;
+    // transition: right .25s ease-out;
 
-    #triangle-right {
-        position: absolute;
-        right: 0;
-        width: 0;
-        height: 0;
-        backdrop-filter: blur(5px);
-        border-top: 16px solid transparent;
-        border-left: 14px solid $bkg-dark-transparent;
-        border-bottom: 16px solid transparent;
-    }
+    // #triangle-right {
+    //     position: absolute;
+    //     right: 0;
+    //     width: 0;
+    //     height: 0;
+    //     backdrop-filter: blur(5px);
+    //     border-top: 16px solid transparent;
+    //     border-left: 14px solid $bkg-dark-transparent;
+    //     border-bottom: 16px solid transparent;
+    // }
 }
 #logo{
     position: absolute;
@@ -310,7 +312,7 @@ h3{
 }
 #profileBtn {
     position: absolute;
-    z-index: 5;
+    z-index: 21;
     top: 13px;
     right: 14px;
     width: 72px;
@@ -363,7 +365,7 @@ h3{
 }
 #rightRail{
     position: absolute;
-    z-index: 4;
+    z-index: 20;
     right: 0;
     top: 0;
     bottom: 0;
@@ -439,7 +441,7 @@ h3{
     color: $bkg-light;
     font-size: 20px;
     font-weight: 600;
-    z-index: 4;
+    z-index: 21;
     top: 294px;
     right:32px;
     width: 40px;
@@ -447,7 +449,8 @@ h3{
     border-radius: 4px;
     background-color: $textHover;
     background-size: contain;
-    // background-image: url(../images/person_icon_rail.png);
+    background-image: url(../images/person_icon_rail.png);
+    background-position: bottom;
     background-repeat: no-repeat;
     cursor: pointer;
 }
@@ -455,7 +458,7 @@ h3{
     position: absolute;
     border-radius: 100%;
     border:4px solid $bkg-light;
-    z-index: 4;
+    z-index: 21;
     background-color: $textHover;
     top: 322px;
     right:27px;
@@ -463,28 +466,89 @@ h3{
     height: 10px;
 }
 #startChatWrapper{
-    width: 320px;
-    height: 160px;
+    width: 290px;
 
     #startChatProfile{
-        width: 50px;
-        height: 50px;
+        width: 60px;
+        height: 60px;
         margin-top: 10px;
+        border:2px solid $bkg-light;
         background-size: contain;
         border-radius: 100%;
         background-color: $bkg-grey;
         box-shadow: 2px 2px 3px inset rgba(0, 0, 0, 0.2);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
     }
-    .startChatPicBox{
-        width: 100px;
-        height: 80px;
-        border-radius: 6px;
-        background-color: $bkg-grey;
-        float: left;
-        margin: 18px 10px 0 0;
+    .startChatThemeWrapper{
+        padding-top: 16px;
+        margin-top: 12px;
+        border-top: 1px solid $bkg-grey;
+
+        .startChatPicBoxContainer{
+            position: relative;
+            margin-bottom: 14px;
+            width: 100%;
+
+            .startChatPicBox{
+                width: 100px;
+                height: 80px;
+                border-radius: 6px;
+                background-color: $bkg-grey;
+            }
+            ul{
+                position: absolute;
+                margin: -2px 0 0 36px;
+                padding: 0;
+                left:110px;
+                top:2px;
+            }
+            ul li{
+                margin-bottom: 6px;
+                letter-spacing: .02em;
+            }
+            .albumName{
+                color: #444;
+                line-height: 1.2em;
+                padding: 2px 0px 6px 0px;
+                font-weight: 500;
+                font-size:14px;
+            }
+            .albumSubject{
+                color: #888;
+                line-height: 1.03em;
+                padding-bottom: 3px;
+                font-weight: 400;
+                font-size:14px;
+            }
+            .albumStats{
+                color: #888;
+                font-weight: 400;
+                font-size:13px;
+            }
+        }
+
+        #seeMoreGallery{
+            padding: 3px 6px 8px 2px !important;
+            cursor: pointer;
+        }
+        #seeMoreGallery:hover{
+            text-decoration: underline;
+        }
+       
     }
+    
     .startChatPicBox:last-child{
         margin-right: 0px;
+    }
+
+    .african{
+        background-image: url(../images/themes/African.png);
+    }
+    .pigs{
+        background-image: url(../images/themes/Pigs.png);
+    }
+    .backyards{
+        background-image: url(../images/themes/Backyards.png);
     }
 
 }
@@ -528,6 +592,8 @@ h3{
         width: 42px;
         height: 42px;
         background-size: contain; 
+        background-position: bottom;
+        background-image: url(../images/person_icon_rail.png);
         box-shadow: 2px 2px 3px inset rgba(0, 0, 0, 0.2);
         -webkit-box-shadow: 2px 2px 3px inset rgba(0, 0, 0, 0.15);
         -moz-box-shadow: 2px 2px 3px inset rgba(0, 0, 0, 0.15);
@@ -893,10 +959,10 @@ h3{
 }
 ///////////////
 
-#infoBox{/* Black box that appears over mugs */
+#infoBox{
     position: absolute;
     max-width: 360px;
-    padding: 10px 20px;
+    padding: 6px 14px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -906,10 +972,12 @@ h3{
     display: table;
     background-color: $bkg-light;
     z-index: 10;
+    opacity: 0;
     right: -300px;
     border-radius: 4px;
     color: $text;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);	
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    transition: all .2s linear;
 }
 #infoBox .nameHolder ul li{
     list-style: none;
@@ -917,6 +985,10 @@ h3{
     text-align: left;
     margin: 0 0 0 -36px !important;
     padding: 0 0 0 -20px !important;
+}
+.infoboxFadeIn{
+    right: 110px !important;
+    opacity: 1 !important;
 }
 .nameHolder{ 
     display: table-cell;
