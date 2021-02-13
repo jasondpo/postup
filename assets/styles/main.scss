@@ -30,7 +30,11 @@ a{
 }
 h3{
     margin-bottom: -6px;
-    color: $textDark;
+    color: $highlight;
+    font-size: 20px;
+    font-weight: 400;
+    display: box;
+    padding-bottom: 6px;
 }
 // Homepage STARTS
 #homepage h10{
@@ -337,7 +341,7 @@ h3{
     display: table-cell;
     margin-top: 100px;
     width: 100%;
-    border-bottom: 1px solid $bkg-grey-rule;
+    border-bottom: 1px dotted $bkg-grey-hover;
 }
 #logOutBtn{
     position: absolute;
@@ -397,30 +401,32 @@ h3{
         top:-12px;
         display: table-cell;
         width: 72px;
-        border-bottom: 1px solid $bkg-grey-rule;
-    }
-    #chooseAlbumBox{
-        top:135px;
-        background-image: url(../images/chooseAlbumBtn.png);
-    }
-    #uploadAlbumBox{
-        top:188px;
-        background-image: url(../images/uploadAlbumBtn.png);
-    }
-    .railItemsClass{
-        position:absolute;
-        width: 100px;
-        height: 40px;
-        right: 0;
-        background-repeat: no-repeat;
-        background-position: left center;
-        cursor: pointer; 
-    }
-    .railItemsClass:hover{
-        // background-color: $bkg-grey;
-        background-position: right center;  
-    }
+        border-bottom: 1px dotted $bkg-grey-hover;
+    } 
 }
+
+#chooseAlbumBox{
+    top:135px;
+    background-image: url(../images/chooseAlbumBtn.png);
+}
+#uploadAlbumBox{
+    top:188px;
+    background-image: url(../images/uploadAlbumBtn.png);
+}
+.railItemsClass{
+    position:absolute;
+    z-index: 21;
+    width: 100px;
+    height: 40px;
+    right: 0;
+    background-repeat: no-repeat;
+    background-position: left center;
+    cursor: pointer; 
+}
+.railItemsClass:hover{
+    background-position: right center;  
+}
+
 #mydiv{
     top:60px;
     right: 120px;
@@ -479,10 +485,25 @@ h3{
         box-shadow: 2px 2px 3px inset rgba(0, 0, 0, 0.2);
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
     }
+    #startChatProfileName{
+        position: absolute;
+        text-transform: capitalize;
+        font-size: 20px;
+        font-weight: 700;
+        color: $textDark;
+        top:29px;
+        left:88px;
+    }
+    #startChatProfileOccupation{
+        position: absolute;
+        top:53px;
+        left:88px;
+        font-size: 13px;
+    }
     .startChatThemeWrapper{
         padding-top: 16px;
         margin-top: 12px;
-        border-top: 1px solid $bkg-grey;
+        border-top: 1px dotted $textHover;
 
         .startChatPicBoxContainer{
             position: relative;
@@ -497,7 +518,7 @@ h3{
             }
             ul{
                 position: absolute;
-                margin: -2px 0 0 36px;
+                margin: -2px 0 0 46px;
                 padding: 0;
                 left:110px;
                 top:2px;
@@ -509,32 +530,35 @@ h3{
             .albumName{
                 color: #444;
                 line-height: 1.2em;
-                padding: 2px 0px 6px 0px;
+                padding: 2px 0px 7px 0px;
                 font-weight: 500;
                 font-size:14px;
             }
             .albumSubject{
                 color: #888;
                 line-height: 1.03em;
-                padding-bottom: 3px;
-                font-weight: 400;
-                font-size:14px;
-            }
-            .albumStats{
-                color: #888;
+                padding-bottom: 4px;
                 font-weight: 400;
                 font-size:13px;
+            }
+            .albumStats{
+                color: #AAA;
+                font-weight: 400;
+                font-size:12px;
             }
         }
 
         #seeMoreGallery{
             padding: 3px 6px 8px 2px !important;
+            font-size: 13px;
             cursor: pointer;
+        }
+        #seeMoreGallery span{
+            text-transform: capitalize;
         }
         #seeMoreGallery:hover{
             text-decoration: underline;
-        }
-       
+        }   
     }
     
     .startChatPicBox:last-child{
@@ -550,8 +574,8 @@ h3{
     .backyards{
         background-image: url(../images/themes/Backyards.png);
     }
-
 }
+
 // Message Container STARTS
 .messageContainer {
     width: 315px;
@@ -977,15 +1001,23 @@ h3{
     border-radius: 4px;
     color: $text;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-    transition: all .2s linear;
+    transition: all .2s ease-out;
 }
 #infoBox .nameHolder ul li{
     list-style: none;
     line-height: 1.8em;
     text-align: left;
-    margin: 0 0 0 -36px !important;
-    padding: 0 0 0 -20px !important;
+    margin: 0 0 0 -45px !important;
+    padding: 0 0 0 -29px !important;
 }
+#infoBox .nameHolder ul li label, input{
+    cursor: pointer;
+}
+
+#infoBox .nameHolder ul li label:hover{
+    color:$textDark;
+}
+
 .infoboxFadeIn{
     right: 110px !important;
     opacity: 1 !important;
@@ -994,10 +1026,13 @@ h3{
     display: table-cell;
     vertical-align: middle;
 }
-.nameHolder p{ 
+.nameHolder h21{ 
     line-height: 1.5em;
     color: #555;
     font-weight: 400;
+    display: block;
+    max-width: 304px;
+    padding: 8px 0px 10px 0px;
 }
 .fa-exclamation-circle{
     color: orange !important;
@@ -1008,7 +1043,13 @@ h3{
 .infoHere span{
     display: none;
 }
-
+.extend{
+    position: absolute;
+    top:0;
+    bottom: 0;
+    right: -90px;
+    width: 100px;
+}
 //// About page
 
 #aboutPage{

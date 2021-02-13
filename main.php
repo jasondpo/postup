@@ -16,31 +16,32 @@
 
     <div id="infoBox">
         <div class="nameHolder"></div>
+        <div class="extend"></div>
     </div>
     
     <div id="rightRail">
         <div id="sectionHeaderAlbums" class="sectionHeaderClass">Albums</div>
         <div id="sectionHeaderContacts" class="sectionHeaderClass">Contacts</div>
+    </div>
         <div id="chooseAlbumBox" class="railItemsClass infoHere">
             <span class="content">
-                <h3>(6) Albums</h3>
+                <h3>6 albums</h3>
                 <ul>
-                <li><i class="fas fa-check-square"></i> African Center</li>
-                <li><i class="far fa-square"></i> JCCO</li>
-                <li><i class="far fa-square"></i> Breonna Taylor</li>
-                <li><i class="far fa-square"></i> Pretty Pigs</li>
-                <li><i class="far fa-square"></i> Backyards</li>
-                <li><i class="far fa-square"></i> Boudoir</li>
+                <li><input type="radio" id="AfricanAlbum" name="albums" value="african"><label for="AfricanAlbum"> African Center</label></li>
+                <li><input type="radio" id="JccoAlbum" name="albums" value="jcco"><label for="JccoAlbum"> JCCO</label></li>
+                <li><input type="radio" id="BreonnaAlbum" name="albums" value="breonna"><label for="BreonnaAlbum"> Breonna Taylor</label></li>                
+                <li><input type="radio" id="PigsAlbum" name="albums" value="pigs"><label for="PigsAlbum"> Pretty Pigs</label></li>
+                <li><input type="radio" id="BackyardsAlbum" name="albums" value="backyards"><label for="BackyardsAlbum"> Backyards</label></li>
+                <li><input type="radio" id="BoudoirAlbum" name="albums" value="boudoir"><label for="BoudoirAlbum"> Boudoir</label></li>                
                 </ul>
             </span>
         </div>
         <div id="uploadAlbumBox" class="railItemsClass infoHere">
             <span class="content">
                     <h3><i class="fas fa-exclamation-circle"></i> Uploading images and video</h3>
-                    <p><u>Images</u> must be at least 1200 by 675px (16:9 ratio) and 72 to 96 dpi for best results. <u>Videos</u> must be MP4 format and no larger than 24MB.</p>
+                    <h21><u>Images</u> must be at least 1200 by 675px (16:9 ratio) and 72 to 96 dpi for best results. <u>Videos</u> must be MP4 format and no larger than 24MB.</h21>
             </span>
         </div>
-    </div>
 
     <audio id="chime" style="display: hidden;">
         <source src="assets/sound/alert.mp3" type="audio/mpeg">
@@ -160,24 +161,26 @@
         <span>
             <div id="startChatWrapper">
                 <div id="startChatProfile"></div>
+                <div id="startChatProfileName"></div>
+                <div id="startChatProfileOccupation">Farmer, Polster, Banker</div>
                 <div class="startChatThemeWrapper">
                     <div class="startChatPicBoxContainer">
                         <div class="startChatPicBox african"></div>
                             <ul>
                             <li class="albumName">Name of album goes here goes here</li>
                             <li class="albumSubject">Polster</li>
-                            <li class="albumStats">12 likes • 21 views</li>
+                            <li class="albumStats"><i class="fas fa-heart"></i>15&nbsp;&nbsp;&nbsp;<i class="fas fa-eye"></i> 27</li>
                             </ul>
                     </div>
                     <div class="startChatPicBoxContainer">
                         <div class="startChatPicBox pigs"></div>
                         <ul>
-                            <li class="albumName">Name of album goes here goes here</li>
+                            <li class="albumName">Name of album goes</li>
                             <li class="albumSubject">Farmer</li>
-                            <li class="albumStats">12 likes • 21 views</li>
+                            <li class="albumStats"><i class="fas fa-heart"></i>14&nbsp;&nbsp;&nbsp;<i class="fas fa-eye"></i> 22</li>
                         </ul>
                     </div>
-                    <div id="seeMoreGallery">•••&nbsp;&nbsp;See <span></span>'s Gallery</div> 
+                    <div id="seeMoreGallery"><i class="fas fa-ellipsis-h"></i>&nbsp;&nbsp;See <span></span>'s Gallery</div> 
                 </div>
             </div>
         </span>
@@ -185,11 +188,11 @@
 
     <div class="startChatBottomActivityBtn"></div>
 
-    <script src="assets/js/slideshow.js"></script>
+    <script type="module" src="assets/js/slideshow.js"></script>
     <script src="assets/js/draggable.js"></script>
     <script src="assets/js/chatBox.js"></script>
     <script src='assets/js/page_transition.js'></script>
-    <script src='assets/js/main.js'> </script>
+    <script type="module" src='assets/js/main.js'> </script>
 
     <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>

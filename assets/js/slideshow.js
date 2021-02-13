@@ -64,6 +64,8 @@ function removePics() { // Remove pics from slideshowFreezeFrame stops animation
     }
 }
 
-// Automatically insert chosen theme.
-$("#slideTheme").attr("href", "assets/styles/slides"+localStorage.themeName+".css?v<?php echo(rand(0,1000));?>")
-
+// Automatically insert chosen theme or update after "chooseAlbum" radio button select
+export function updateTheme() {
+    $("#slideTheme").attr("href", "assets/styles/slides" + localStorage.themeName + ".css?v<?php echo(rand(0,1000));?>")
+}
+updateTheme()

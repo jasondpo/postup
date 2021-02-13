@@ -102,7 +102,7 @@ function checkAvailability() {
         if (snapshot.val().LastSenderName != localStorage.profileName && getTime() - snapshot.val().Timestamp <= 60000) {
             $(".startChatBottomActivityBtn").css("background-color", "#00e400");
             $(".startChatBottomBtn, #senderProfilePic, #startChatProfile").css("background-image", "url(assets/images/profiles/" + snapshot.val().LastSenderName + ".png)");
-            $("#senderProfileName").html(snapshot.val().LastSenderName)
+            $("#seeMoreGallery span, #startChatProfileName, #senderProfileName").html(snapshot.val().LastSenderName)
         } else if (snapshot.val().LastSenderName != localStorage.profileName && getTime() - snapshot.val().Timestamp >= 60000) {
             $(".startChatBottomActivityBtn").css("background-color", "#CCCCCC");
         } else if (snapshot.val().LastSenderName == localStorage.profileName) {

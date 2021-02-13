@@ -1,3 +1,5 @@
+import { updateTheme } from './slideshow.js';
+
 $("#logOutBtn").click(function () {
     localStorage.clear();
     window.location = 'index.php'
@@ -14,23 +16,44 @@ $(document).on('mouseover', '.infoHere', function () {
     var above = x.top;
     var fromLeft = x.left;
     var divWords = $(this).find(':first-child').html();
-    $('#infoBox').css('top', above - 7 );
+    $('#infoBox').css('top', above - 7);
+    $('#infoBox').removeClass("infoboxFadeIn");
+    $('#overlayOptions').hide();
+    clearTimeout(timer);
     timer = setTimeout(function () {
         $('#overlayOptions').fadeIn("fast");
         $('#infoBox').addClass("infoboxFadeIn");
         $('.nameHolder').html(divWords);
+        themeCheck();
     }, 250)
 });
 
-$(document).on('mouseout', '.infoHere', function () {
+$(document).on('mouseover', '#overlayOptions, #rightRail', function () {
     $('#infoBox').removeClass("infoboxFadeIn");
     $('#overlayOptions').hide();
     clearTimeout(timer);
 });
 
+// ChooseAlbum read
+function themeCheck() {
+    var theme = localStorage.themeName.charAt(0).toUpperCase() + localStorage.themeName.slice(1);
+    $("#" + theme + "Album").prop("checked", true);
+
+}
+
+// ChooseAlbum select
+$(document).on('change', 'input[type=radio][name=albums]', function (event) {
+    var radioVal = $('input[name="albums"]:checked').val();
+    localStorage.themeName = radioVal;
+    updateTheme();
+});
+
+
+
+
 // Options
-var overlay = document.getElementById("overlayOptions");
-var claimOn = "";
+// var overlay = document.getElementById("overlayOptions");
+// var claimOn = "";
 
 // $("#chooseAlbumBox").click(function () {
 //     if (overlay.style.right == "100%" || overlay.style.right != "100px") {
