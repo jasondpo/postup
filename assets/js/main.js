@@ -38,7 +38,6 @@ $(document).on('mouseover', '#overlayOptions, #rightRail', function () {
 function themeCheck() {
     var theme = localStorage.themeName.charAt(0).toUpperCase() + localStorage.themeName.slice(1);
     $("#" + theme + "Album").prop("checked", true);
-
 }
 
 // ChooseAlbum select
@@ -47,8 +46,6 @@ $(document).on('change', 'input[type=radio][name=albums]', function (event) {
     localStorage.themeName = radioVal;
     updateTheme();
 });
-
-
 
 
 // Options
