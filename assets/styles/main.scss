@@ -56,8 +56,14 @@ h3{
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background:$text;
+    background:#D7C670;
 }
+::selection {
+    background: #D7C670; /* WebKit/Blink Browsers */
+  }
+  ::-moz-selection {
+    background: #D7C670; /* Gecko Browsers */
+  }
 // Homepage STARTS
 #homepage h10{
     font-family: 'Roboto', sans-serif;
@@ -221,17 +227,27 @@ h3{
 
 #wisdomBox{
     position: absolute;
+    background-color: $highlight;
     z-index: 3;
+    padding: 6px 10px 7px 10px;
     font-family: 'Roboto', sans-serif;
-    color: $text;
+    color: $textDark;
     text-align: right;
     font-size: 14px;
     display: block;
-    bottom: 20px;
-    left: 20px;
+    bottom: 0%;
+    left: 0px;
     letter-spacing: .03em;
-    font-weight: 300;
+    font-weight: 400;
     cursor: pointer;
+}
+#wisdomBox:hover{
+    background-color: #D7C670;
+}
+#greet{
+    color:$textDark;
+    font-weight: 500;
+    letter-spacing: .02em !important;
 }
 #registraion{
     position: absolute;
@@ -251,10 +267,9 @@ h3{
         cursor: pointer; 
     }
     #signUpBtn:hover{
-        text-decoration: underline !important;
+        color: #D7C670
     }
     #logInBtn:hover{
-        text-decoration: underline !important;
         cursor: pointer;
         color: $bkg-light; 
     }
@@ -279,6 +294,18 @@ h3{
     color: #CCC;
     cursor: pointer;
 }
+#copyRight{
+    position: absolute;
+    z-index: 3;
+    bottom: 20px;
+    left: 30px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    display: inline-block;
+    color: $text;
+    letter-spacing: .03em;
+    font-weight: 300;
+}
 #backToTop{
     position: absolute;
     z-index: 3;
@@ -295,9 +322,7 @@ h3{
     color: $textDark;
     cursor: pointer;
 }
-#greet{
-    color:$text;
-}
+
 #rectangleUnderLogin{
     position: absolute;
     z-index: 2;

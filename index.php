@@ -71,6 +71,7 @@
             </div> 
         </div>
         <a href="#home-container"><div id="backToTop">Back to Top</div></a>
+        <div id="copyRight">&copy; 2021 PostUp • Created by Jason Dobbins</div>
 
         <div id="parallaxFront" class="scroll" data-rate="-.3"></div>
         <div id="parallaxBack" class="scroll" data-rate="-.07"></div>
